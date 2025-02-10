@@ -9,9 +9,21 @@ class ObjectRenderer:
         pop.init() #called pygame for accessing the modules
         self.RES = self.WIDTH, self.HEIGHT = 1600, 900
         self.H_WIDTH, self.H_HEIGHT = self.WIDTH // 2, self.HEIGHT // 2
-        self.fps = 60 #adjusting the fps 
+        self.FPS = 60 #adjusting the fps 
         self.screen = pop.display.set_mode(self.RES)
-        self.clock = pop.time.clock()
+        self.clock = pop.time.Clock()
 
     def draw(self):
         self.screen.fill(pop.Color('darkslategray'))
+
+    def run(self):
+        while true:
+            self.draw()
+            [exit() for i in pop.event.get() if i.type == pop.QUIT]
+            pop.display.flip()
+            self.clock.tick(self.FPS)
+
+
+if __name__ == "__main__":
+    app = ObjectRenderer()
+    app.run()
