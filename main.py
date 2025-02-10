@@ -11,4 +11,7 @@ class ObjectRenderer:
         self.H_WIDTH, self.H_HEIGHT = self.WIDTH // 2, self.HEIGHT // 2
         self.fps = 60 #adjusting the fps 
         self.screen = pop.display.set_mode(self.RES)
-        self.clock = pg.time.clock()
+        self.clock = pop.time.clock()
+
+    def draw(self):
+        self.screen.fill(pop.Color('darkslategray'))
