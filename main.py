@@ -7,3 +7,8 @@ displayed | since we are not using c++ we need to use an external lib
 class ObjectRenderer:
     def __init__(self):
         pop.init() #called pygame for accessing the modules
+        self.RES = self.WIDTH, self.HEIGHT = 1600, 900
+        self.H_WIDTH, self.H_HEIGHT = self.WIDTH // 2, self.HEIGHT // 2
+        self.fps = 60 #adjusting the fps 
+        self.screen = pop.display.set_mode(self.RES)
+        self.clock = pg.time.clock()
